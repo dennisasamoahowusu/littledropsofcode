@@ -5,6 +5,10 @@ function __autoload($class) {
     require_once(LIBLDOC_PATH . "/classes/$class.php");
 }
 
+function page($page) {
+    require(LIBLDOC_PATH . "/pages/$page.php");
+}
+
 function snippet($snippet) { 
     require(LIBLDOC_PATH . "/snippets/$snippet.php");
 }
@@ -12,6 +16,13 @@ function snippet($snippet) {
 // This needs to be here to ensure that the Session constructor runs before 
 // the headers are sent.
 Session::instance();
+
+if (isset($_GET['page'])) {
+    $page = $_GET['page'];
+} else {
+    $page = "home";
+}
+Session::instance()->setNavbarItem($page);
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml" version="XHTML 1.1">
@@ -30,7 +41,7 @@ Session::instance();
 	<?php snippet("navbar"); ?>
       </div>
 
-      <p>This is just a placeholder. To be removed.</p>
+      <?php page($page); ?>
 
       <div id="page-footer">
 	Copyright &copy; 2009 Lorenzo Cabrini
