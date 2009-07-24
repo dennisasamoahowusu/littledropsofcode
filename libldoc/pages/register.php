@@ -1,4 +1,4 @@
-<form method="post" action="index.php?action=reg">
+<form method="post" action="index.php?action=register">
   Full name<br />
   <input type="text" name="fullname" /><br />
   

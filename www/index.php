@@ -5,6 +5,10 @@ function __autoload($class) {
     require_once(LIBLDOC_PATH . "/classes/$class.php");
 }
 
+function action($action) {
+    require(LIBLDOC_PATH . "/actions/$action.php");
+}
+
 function page($page) {
     require(LIBLDOC_PATH . "/pages/$page.php");
 }
@@ -16,6 +20,10 @@ function snippet($snippet) {
 // This needs to be here to ensure that the Session constructor runs before 
 // the headers are sent.
 Session::instance();
+
+if (isset($_GET['action'])) {
+    action($_GET['action']);
+}
 
 if (isset($_GET['page'])) {
     $page = $_GET['page'];
