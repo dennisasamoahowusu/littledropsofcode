@@ -1,6 +1,10 @@
 <?php
 define(LIBLDOC_PATH, '@LIBLDOC_PATH@');
 
+function __autoload($class) {
+    require_once(LIBLDOC_PATH . "/classes/$class.php");
+}
+
 function snippet($snippet) { 
     require(LIBLDOC_PATH . "/snippets/$snippet.php");
 }
