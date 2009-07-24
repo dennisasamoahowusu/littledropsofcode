@@ -22,3 +22,31 @@ div#page-footer {
     margin-top:		    10px;
     text-align:		    center;
 }
+
+ul#navlist {
+    border-bottom:	    1px solid #778;
+    font:		    bold 12px sans-serif;
+    margin-left:	    0;
+    padding:		    3px 0;
+}
+
+ul#navlist li {
+    display:		    inline;
+    list-style:		    none;
+    margin:		    0;
+}
+
+ul#navlist li a {
+    background:		    #dde;
+    border:		    1px solid #778;
+    border-bottom:	    none;
+    margin-left:	    3px;
+    padding:		    3px 0.5em;
+    text-decoration:	    none;
+}
+
+ul#navlist li a:hover {
+    background:		    #aae;
+    border-color:	    #227;
+    color:		    #000;
+}
