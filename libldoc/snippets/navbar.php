@@ -1,4 +1,15 @@
 <ul id="navlist">
-  <li><a href="index.php?page=home">Home</a></li>
-  <li><a href="index.php?page=register">Register</a></li>
+<?php
+$items = array('Home', 'Register');
+$current = Session::instance()->navbarItem();
+
+foreach ($items as $item) {
+    echo '<li>';
+    echo '<a href="index.php?page=' . strtolower($item) . '"';
+    if ($current == $item) {
+	echo ' id="active-navbar-item"';
+    }
+    echo '>' . $item . '</a></li>';
+}
+?>
 </ul>

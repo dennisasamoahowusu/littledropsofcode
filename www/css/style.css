@@ -50,3 +50,8 @@ ul#navlist li a:hover {
     border-color:	    #227;
     color:		    #000;
 }
+
+ul#navlist li a#active-navbar-item {
+    background:		    white;
+    border-bottom:	    1px solid white;
+}

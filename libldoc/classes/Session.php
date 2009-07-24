@@ -14,5 +14,13 @@ class Session {
 
 	return self::$instance;
     }
+
+    public function navbarItem() {
+	if (isset($_SESSION['navbar_item'])) {
+	    return $_SESSION['navbar_item'];
+	} else {
+	    return 'Home';
+	}
+    }
 }
 ?>

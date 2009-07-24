@@ -8,6 +8,10 @@ function __autoload($class) {
 function snippet($snippet) { 
     require(LIBLDOC_PATH . "/snippets/$snippet.php");
 }
+
+// This needs to be here to ensure that the Session constructor runs before 
+// the headers are sent.
+Session::instance();
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml" version="XHTML 1.1">
