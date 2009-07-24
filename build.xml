@@ -20,13 +20,19 @@
   <property name="db.data" value="${src.db}/${db.type}_data.sql" />
   <property name="db.url" value="jdbc:${db.type}://${db.host}/${db.name}" />
 
+  <filterset id="srcFilters">
+    <filter token="LIBLDOC_PATH" value="${dest.lib}" />
+  </filterset>
+
   <target name="deploy">
     <copy todir="${dest.www}">
       <fileset dir="${src.www}" />
+      <filterset refid="srcFilters" />
     </copy>
 
     <copy todir="${dest.lib}">
       <fileset dir="${src.lib}" />
+      <filterset refid="srcFilters" />
     </copy>
   </target>
 
