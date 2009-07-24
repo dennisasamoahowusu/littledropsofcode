@@ -22,5 +22,9 @@ class Session {
 	    return 'Home';
 	}
     }
+
+    public function setNavbarItem($item) {
+	$_SESSION['navbar_item'] = ucwords($item);
+    }
 }
 ?>
