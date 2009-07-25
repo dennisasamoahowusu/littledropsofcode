@@ -22,6 +22,11 @@
 
   <filterset id="srcFilters">
     <filter token="LIBLDOC_PATH" value="${dest.lib}" />
+    <filter token="DB_TYPE" value="${db.type}" />
+    <filter token="DB_HOST" value="${db.host}" />
+    <filter token="DB_NAME" value="${db.name}" />
+    <filter token="DB_USER" value="${db.user}" />
+    <filter token="DB_PASS" value="${db.pass}" />
   </filterset>
 
   <target name="deploy">
