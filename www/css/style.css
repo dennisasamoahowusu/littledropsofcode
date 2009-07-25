@@ -55,3 +55,13 @@ ul#navlist li a#active-navbar-item {
     background:		    white;
     border-bottom:	    1px solid white;
 }
+
+span.label {
+    color:		    green;
+    font-weight:	    bold;
+}
+
+input {
+    font-size:		    larger;
+    margin-bottom:	    1em;
+}

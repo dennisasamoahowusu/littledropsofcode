@@ -1,17 +1,17 @@
 <form method="post" action="index.php?action=register">
-  Full name<br />
+  <span class="label">Full name</span><br />
   <input type="text" name="fullname" /><br />
   
-  Username<br />
+  <span class="label">Username</span><br />
   <input type="text" name="username" /><br />
   
-  Password<br />
+  <span class="label">Password</span><br />
   <input type="password" name="password" /><br />
   
-  Confirm password<br />
+  <span class="label">Confirm password</span><br />
   <input type="password" name="password2" /><br />
   
-  Email<br />
+  <span class="label">Email</span><br />
   <input type="text" name="email"><br />
 
   <input type="submit" name="Register" /><br />
