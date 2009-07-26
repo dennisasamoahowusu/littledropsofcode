@@ -3,11 +3,15 @@
 <project name="littledropsofcode" default="deploy" basedir=".">
   <property file="build.properties" />
 
+  <property name="pkg.jquery" value="jquery-1.3.2.min.js" />
+
   <property name="src.db" value="db" />
   <property name="src.www" value="www" />
   <property name="src.lib" value="libldoc" />
+  <property name="src.jquery" value="/usr/local/share/js" />
   <property name="dest.www" value="/var/www" />
   <property name="dest.lib" value="/usr/local/lib/ldoc" />
+  <property name="dest.jquery" value="${dest.www}/js/" />
 
   <property name="db.type" value="mysql" />
   <property name="db.user" value="ldocuser" />
@@ -39,6 +43,8 @@
       <fileset dir="${src.lib}" />
       <filterset refid="srcFilters" />
     </copy>
+
+    <copy file="${src.jquery}/${pkg.jquery}" todir="${dest.jquery}" />
   </target>
 
   <target name="setup-db">
