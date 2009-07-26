@@ -31,6 +31,7 @@
     <filter token="DB_NAME" value="${db.name}" />
     <filter token="DB_USER" value="${db.user}" />
     <filter token="DB_PASS" value="${db.pass}" />
+    <filter token="PKG_JQUERY" value="${pkg.jquery}" />
   </filterset>
 
   <target name="deploy">

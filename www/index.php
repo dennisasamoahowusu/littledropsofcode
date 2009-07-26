@@ -37,6 +37,7 @@ Session::instance()->setNavbarItem($page);
   <head>
     <title>Little drops of code</title>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="js/@PKG_JQUERY@" type="text/javascript"></script>
   </head>
 
   <body>
