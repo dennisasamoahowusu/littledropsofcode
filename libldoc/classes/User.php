@@ -23,5 +23,12 @@ class User {
 	$sth->execute(array($user['username'], $user['fullname'],
 	    $user['password'], $user['email']));
     }
+
+    public function exists($user) {
+	$query = "select count(*) from users where username = ?";
+	$sth = $this->dbh->prepare($query);
+	$sth->execute(array($user));
+	return $sth->fetchColumn() > 0;
+    }
 }
 ?>
