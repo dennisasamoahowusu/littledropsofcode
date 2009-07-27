@@ -26,6 +26,7 @@
   <property name="db.url" value="jdbc:${db.type}://${db.host}/${db.name}" />
 
   <filterset id="srcFilters">
+    <filter token="WWWROOT" value="${dest.www}" />
     <filter token="LIBLDOC_PATH" value="${dest.lib}" />
     <filter token="DB_TYPE" value="${db.type}" />
     <filter token="DB_HOST" value="${db.host}" />
