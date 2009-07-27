@@ -15,6 +15,6 @@
     <span class="label">Email</span><br />
     <input type="text" name="email"><br />
 
-    <input type="submit" class="submit" name="Register" /><br />
+    <input type="submit" class="submit" value="Register" /><br />
   </form>
 </div>
