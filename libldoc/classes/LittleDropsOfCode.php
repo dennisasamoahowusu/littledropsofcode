@@ -27,4 +27,16 @@ class LittleDropsOfCode {
     public function setPage($page) {
 	$this->page = $page;
     }
+
+    public function action($action) {
+	require(LIBLDOC_PATH . "/actions/$action.php");
+    }
+
+    public function page($page) {
+	require(LIBLDOC_PATH . "/pages/$page.php");
+    }
+
+    public function snippet($snippet) {
+	require(LIBLDOC_PATH . "/snippets/$snippet.php");
+    }
 }

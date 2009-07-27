@@ -5,27 +5,16 @@ function __autoload($class) {
     require_once(LIBLDOC_PATH . "/classes/$class.php");
 }
 
-function action($action) {
-    require(LIBLDOC_PATH . "/actions/$action.php");
-}
-
-function page($page) {
-    require(LIBLDOC_PATH . "/pages/$page.php");
-}
-
-function snippet($snippet) { 
-    require(LIBLDOC_PATH . "/snippets/$snippet.php");
-}
-
 // This needs to be here to ensure that the Session constructor runs before 
 // the headers are sent.
 Session::instance();
+$ldoc = LittleDropsOfCode::instance();
 
 if (isset($_GET['action'])) {
-    action($_GET['action']);
+    $ldoc->action($_GET['action']);
 }
 
-Session::instance()->setNavbarItem(LittleDropsOfCode::instance()->getPage());
+Session::instance()->setNavbarItem($ldoc->getPage());
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml" version="XHTML 1.1">
@@ -43,10 +32,10 @@ Session::instance()->setNavbarItem(LittleDropsOfCode::instance()->getPage());
       </div>
 
       <div id="navbar">
-	<?php snippet("navbar"); ?>
+	<?php $ldoc->snippet("navbar"); ?>
       </div>
 
-      <?php page(LittleDropsOfCode::instance()->getPage()); ?>
+      <?php $ldoc->page($ldoc->getPage()); ?>
 
       <div id="page-footer">
 	Copyright &copy; 2009 Lorenzo Cabrini
