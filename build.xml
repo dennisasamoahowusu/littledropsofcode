@@ -4,6 +4,7 @@
   <property file="build.properties" />
 
   <property name="pkg.jquery" value="jquery-1.3.2.min.js" />
+  <property name="pkg.jquery.json" value="jquery.json-1.3.min.js" />
 
   <property name="src.db" value="db" />
   <property name="src.www" value="www" />
@@ -46,6 +47,7 @@
     </copy>
 
     <copy file="${src.jquery}/${pkg.jquery}" todir="${dest.jquery}" />
+    <copy file="${src.jquery}/${pkg.jquery.json}" todir="${dest.jquery}" />
   </target>
 
   <target name="setup-db">
