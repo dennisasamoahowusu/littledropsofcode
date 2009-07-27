@@ -7,7 +7,6 @@ function __autoload($class) {
 
 $ldoc = LittleDropsOfCode::instance();
 $ldoc->action();
-//Session::instance()->setNavbarItem($ldoc->getPage());
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml" version="XHTML 1.1">
