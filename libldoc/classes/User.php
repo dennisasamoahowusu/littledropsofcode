@@ -30,5 +30,21 @@ class User {
 	$sth->execute(array($user));
 	return $sth->fetchColumn() > 0;
     }
+
+    public function validate($user) {
+	$ret = array();
+	if ($user['username'] == '') {
+	    $ret['valid'] = false;
+	    $ret['msg'] = 'No username specified';
+	} elseif ($this->exists($user['username'])) {
+	    $ret['valid'] = false;
+	    $ret['msg'] = "A user with that username already exists";
+	} else {
+	    $ret['valid'] = true;
+	    $ret['msg'] = 'Valid';
+	}
+
+	return $ret;
+    }
 }
 ?>
