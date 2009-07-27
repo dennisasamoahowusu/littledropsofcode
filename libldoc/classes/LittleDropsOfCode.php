@@ -46,4 +46,15 @@ class LittleDropsOfCode {
     public function snippet($snippet) {
 	require(LIBLDOC_PATH . "/snippets/$snippet.php");
     }
+
+    public function jslink() {
+	$js = '@WWWROOT@/js/' . $this->page . '.js';
+	if (file_exists($js)) {
+	    return '<script src="' . $js . '" type="text/javascript">'
+		. '</script>';
+	} else {
+	    return '';
+	}
+    }
+
 }
