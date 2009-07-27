@@ -5,16 +5,9 @@ function __autoload($class) {
     require_once(LIBLDOC_PATH . "/classes/$class.php");
 }
 
-// This needs to be here to ensure that the Session constructor runs before 
-// the headers are sent.
-Session::instance();
 $ldoc = LittleDropsOfCode::instance();
-
-if (isset($_GET['action'])) {
-    $ldoc->action($_GET['action']);
-}
-
-Session::instance()->setNavbarItem($ldoc->getPage());
+$ldoc->action();
+//Session::instance()->setNavbarItem($ldoc->getPage());
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml" version="XHTML 1.1">

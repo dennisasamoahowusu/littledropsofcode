@@ -2,12 +2,15 @@
 class LittleDropsOfCode {
     private static $instance;
     private $page;
+    private $session;
 
     private function __construct() {
+	$this->session = Session::instance();
+
 	if (isset($_GET['page'])) {
-	    $this->page = $_GET['page'];
+	    $this->setPage($_GET['page']);
 	} else {
-	    $this->page = 'home';
+	    $this->setPage('home');
 	}
     }
 
@@ -26,10 +29,14 @@ class LittleDropsOfCode {
 
     public function setPage($page) {
 	$this->page = $page;
+	$this->session->setNavbarItem($page);
     }
 
-    public function action($action) {
-	require(LIBLDOC_PATH . "/actions/$action.php");
+    public function action() {
+	if (isset($_GET['action'])) {
+	    $action = $_GET['action'];
+	    require(LIBLDOC_PATH . "/actions/$action.php");
+	}
     }
 
     public function page($page) {
