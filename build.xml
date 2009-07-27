@@ -33,6 +33,7 @@
     <filter token="DB_USER" value="${db.user}" />
     <filter token="DB_PASS" value="${db.pass}" />
     <filter token="PKG_JQUERY" value="${pkg.jquery}" />
+    <filter token="PKG_JQUERY_JSON" value="${pkg.jquery.json}" />
   </filterset>
 
   <target name="deploy">

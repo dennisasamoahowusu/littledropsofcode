@@ -33,6 +33,7 @@ Session::instance()->setNavbarItem(LittleDropsOfCode::instance()->getPage());
     <title>Little drops of code</title>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script src="js/@PKG_JQUERY@" type="text/javascript"></script>
+    <script src="js/@PKG_JQUERY_JSON@" type="text/javascript"></script>
   </head>
 
   <body>
