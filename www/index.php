@@ -38,7 +38,7 @@ Session::instance()->setNavbarItem(LittleDropsOfCode::instance()->getPage());
   <body>
     <div id="page">
       <div id="page-header">
-	Litte drops of code
+	Little drops of code
       </div>
 
       <div id="navbar">
