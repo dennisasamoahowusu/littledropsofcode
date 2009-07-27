@@ -25,12 +25,7 @@ if (isset($_GET['action'])) {
     action($_GET['action']);
 }
 
-if (isset($_GET['page'])) {
-    $page = $_GET['page'];
-} else {
-    $page = "home";
-}
-Session::instance()->setNavbarItem($page);
+Session::instance()->setNavbarItem(LittleDropsOfCode::instance()->getPage());
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml" version="XHTML 1.1">
@@ -50,7 +45,7 @@ Session::instance()->setNavbarItem($page);
 	<?php snippet("navbar"); ?>
       </div>
 
-      <?php page($page); ?>
+      <?php page(LittleDropsOfCode::instance()->getPage()); ?>
 
       <div id="page-footer">
 	Copyright &copy; 2009 Lorenzo Cabrini
