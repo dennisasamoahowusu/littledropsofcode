@@ -48,7 +48,7 @@ class LittleDropsOfCode {
     }
 
     public function jslink() {
-	$js = '@WWWROOT@/js/' . $this->page . '.js';
+	$js = 'js/' . $this->page . '.js';
 	if (file_exists($js)) {
 	    return '<script src="' . $js . '" type="text/javascript">'
 		. '</script>';
