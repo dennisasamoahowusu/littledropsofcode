@@ -47,6 +47,10 @@ class LittleDropsOfCode {
 	require(LIBLDOC_PATH . "/snippets/$snippet.php");
     }
 
+    public function ajax($ajax) {
+	require(LIBLDOC_PATH . "/ajax/$ajax.php");
+    }
+
     public function jslink() {
 	$js = 'js/' . $this->page . '.js';
 	if (file_exists($js)) {
@@ -56,5 +60,4 @@ class LittleDropsOfCode {
 	    return '';
 	}
     }
-
 }
