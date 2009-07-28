@@ -1,4 +1,5 @@
 <div class="form-container">
+
   <form method="post" action="index.php?action=register">
     <span class="label">Full name</span><br />
     <input type="text" name="fullname" /><br />

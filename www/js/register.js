@@ -1,4 +1,7 @@
 $(document).ready(function() {
+    var errmsg = $("#error-message");
+    //errmsg.hide();
+
     $("form").submit(function() {
 	var data = $("form").serializeArray();
 	var json = $.toJSON(data);
@@ -9,11 +12,16 @@ $(document).ready(function() {
 	    if ($.evalJSON(data).valid == true) {
 		form.submit();
 	    } else {
-		alert("Foo: " + $.evalJSON(data).msg);
+		errmsg.html($.evalJSON(data).msg);
+		errmsg.fadeIn('normal');
+		//alert("Foo: " + $.evalJSON(data).msg);
 
 	    }
 	});
 	
 	return false;
     });
+
+    //message.hide();
 });
+

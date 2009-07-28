@@ -15,6 +15,7 @@ $ldoc->action();
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script src="js/@PKG_JQUERY@" type="text/javascript"></script>
     <script src="js/@PKG_JQUERY_JSON@" type="text/javascript"></script>
+    <script src="js/init.js" type="text/javascript"></script>
     <?= $ldoc->jslink() ?>
   </head>
 
@@ -26,6 +27,10 @@ $ldoc->action();
 
       <div id="navbar">
 	<?php $ldoc->snippet("navbar"); ?>
+      </div>
+
+      <div id="messages">
+	<?php $ldoc->snippet("messages"); ?>
       </div>
 
       <?php $ldoc->page($ldoc->getPage()); ?>
