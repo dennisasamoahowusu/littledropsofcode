@@ -33,12 +33,24 @@ class User {
 
     public function validate($user) {
 	$ret = array();
-	if ($user['username'] == '') {
+	if ($user['fullname'] == '') {
+	    $ret['valid'] = false;
+	    $ret['msg'] = "You did not enter your name";
+	} elseif ($user['username'] == '') {
 	    $ret['valid'] = false;
 	    $ret['msg'] = 'No username specified';
 	} elseif ($this->exists($user['username'])) {
 	    $ret['valid'] = false;
 	    $ret['msg'] = "A user with that username already exists";
+	} elseif ($user['password'] == '') {
+	    $ret['valid'] = false;
+	    $ret['msg'] = 'You did not set a password';
+	} elseif ($user['password'] != $user['password2']) {
+	    $ret['valid'] = false;
+	    $ret['msg'] = "The passwords do not match";
+	} elseif ($user['email'] == '') {
+	    $ret['valid'] = false;
+	    $ret['msg'] = 'You did not specify your email';
 	} else {
 	    $ret['valid'] = true;
 	    $ret['msg'] = 'Valid';
