@@ -17,6 +17,8 @@ class User {
     }
 
     public function add($user) {
+	$this->sanitize($user);
+
 	$query = "insert into users(username, fullname, password, email, "
 	    . "reg_date) values(?, ?, ?, ?, now())";
 	$sth = $this->dbh->prepare($query);
@@ -32,6 +34,8 @@ class User {
     }
 
     public function validate($user) {
+	$this->sanitize($user);
+
 	$ret = array();
 	if ($user['fullname'] == '') {
 	    $ret['valid'] = false;
@@ -57,6 +61,12 @@ class User {
 	}
 
 	return $ret;
+    }
+
+    private function sanitize(&$user) {
+	$user['fullname'] = trim($user['fullname']);
+	$user['username'] = trim($user['username']);
+	$user['email'] = trim($user['email']);
     }
 }
 ?>
