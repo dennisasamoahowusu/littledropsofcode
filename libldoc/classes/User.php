@@ -26,10 +26,10 @@ class User {
 	    $user['password'], $user['email']));
     }
 
-    public function exists($user) {
+    public function exists($username) {
 	$query = "select count(*) from users where username = ?";
 	$sth = $this->dbh->prepare($query);
-	$sth->execute(array($user));
+	$sth->execute(array($username));
 	return $sth->fetchColumn() > 0;
     }
 
