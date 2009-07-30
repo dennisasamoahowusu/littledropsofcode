@@ -5,20 +5,20 @@ at our <a href="index.php?page=terms">terms of service</a>.</p>
 
 <div class="form-container">
   <form method="post" action="index.php?action=register">
-    <span class="label">Full name</span><br />
-    <input type="text" name="fullname" /><br />
+    <label for="fullname">Full name</label><br />
+    <input type="text" name="fullname" id="fullname" /><br />
   
-    <span class="label">Username</span><br />
-    <input type="text" name="username" /><br />
+    <label for="username">Username</label><br />
+    <input type="text" name="username" id="username" /><br />
   
-    <span class="label">Password</span><br />
-    <input type="password" name="password" /><br />
+    <label for="password">Password</label><br />
+    <input type="password" name="password" id="password" /><br />
   
-    <span class="label">Confirm password</span><br />
-    <input type="password" name="password2" /><br />
+    <label for="password2">Confirm password</label><br />
+    <input type="password" name="password2" id="password2" /><br />
   
-    <span class="label">Email</span><br />
-    <input type="text" name="email"><br />
+    <label for="email">Email</label><br />
+    <input type="text" name="email" id="email" /><br />
 
     <input type="submit" class="submit" value="Register" /><br />
   </form>

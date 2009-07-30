@@ -56,7 +56,7 @@ ul#navlist li a#active-navbar-item {
     border-bottom:	    1px solid white;
 }
 
-span.label {
+label {
     color:		    green;
     font-weight:	    bold;
     margin-bottom:	    1px;
