@@ -53,6 +53,9 @@ class User {
 	} elseif ($this->exists($user['username'])) {
 	    $ret['valid'] = false;
 	    $ret['msg'] = "A user with that username already exists";
+	} elseif (!preg_match("/^[a-zA-Z][\w.]*$/", $user['username'])) {
+	    $ret['valid'] = false;
+	    $ret['msg'] = "The username contains invalid charachers";
 	} elseif ($user['password'] == '') {
 	    $ret['valid'] = false;
 	    $ret['msg'] = 'You did not set a password';
