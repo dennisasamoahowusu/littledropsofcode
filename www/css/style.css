@@ -91,3 +91,12 @@ div#error-message {
     color:		    #a00000;
     padding:		    2px;
 }
+
+span.missing {
+    color:		    #800000;
+    font-weight:	    bold;
+}
+
+p {
+    text-align:		    justify;
+}

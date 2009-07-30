@@ -40,7 +40,11 @@ class LittleDropsOfCode {
     }
 
     public function page($page) {
-	require(LIBLDOC_PATH . "/pages/$page.php");
+	if (file_exists(LIBLDOC_PATH . "/pages/$page.php")) {
+	    require(LIBLDOC_PATH . "/pages/$page.php");
+	} else {
+	    require(LIBLDOC_PATH . "/error/nopage.php");
+	}
     }
 
     public function snippet($snippet) {
