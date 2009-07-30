@@ -33,6 +33,13 @@ class User {
 	return $sth->fetchColumn() > 0;
     }
 
+    public function emailExists($email) {
+	$query = "select count(*) from users where email = ?";
+	$sth = $this->dbh->prepare($query);
+	$sth->execute(array($email));
+	return $sth->fetchColumn() > 0;
+    }
+
     public function validate($user) {
 	$this->sanitize($user);
 
@@ -55,6 +62,9 @@ class User {
 	} elseif ($user['email'] == '') {
 	    $ret['valid'] = false;
 	    $ret['msg'] = 'You did not specify your email';
+	} elseif ($this->emailExists($user['email'])) {
+	    $ret['valid'] = false;
+	    $ret['msg'] = "A user is already registered with that email";
 	} else {
 	    $ret['valid'] = true;
 	    $ret['msg'] = 'Valid';
