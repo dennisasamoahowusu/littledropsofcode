@@ -31,6 +31,7 @@ class User {
 	$sth = $this->dbh->prepare($query);
 	$sth->execute(array($user['username'], $user['fullname'],
 	    $user['password'], $user['email']));
+	return $this->getByUsername($user['username']);
     }
 
     public function exists($username) {
