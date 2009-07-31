@@ -19,7 +19,7 @@ class User {
     public function getByUsername($username) {
 	$query = "select * from users where username = ?";
 	$sth = $this->dbh->prepare($query);
-	$sth-execute(array($username));
+	$sth->execute(array($username));
 	return $sth->fetch();
     }
 
