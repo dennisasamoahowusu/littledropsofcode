@@ -23,5 +23,15 @@ class ActivityLog {
 	$sth = $this->dbh->prepare($query);
 	$sth->execute(array($log['type'], $log['user'], $log['summary']));
     }
+
+    public function registration($user) {
+	$log = array();
+	$log['user'] = $user['user_id'];
+	$log['type'] = 'Registration';
+	$log['summary'] = 'User ' . $user['username'] . ' (' 
+	    . $user['fullname'] . ') registered';
+
+	$this->log($log);
+    }
 }
 ?>
