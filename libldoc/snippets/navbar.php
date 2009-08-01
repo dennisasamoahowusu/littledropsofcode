@@ -1,6 +1,6 @@
 <ul id="navlist">
 <?php
-$items = array('Home', 'Register');
+$items = array('Home', 'Login', 'Register');
 $current = Session::instance()->navbarItem();
 
 foreach ($items as $item) {
