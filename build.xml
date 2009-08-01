@@ -96,4 +96,8 @@
     <copy file="LICENSE" tofile="${archive.dir}/LICENSE" />
     <copy file="README" tofile="${archive.dir}/README" />
   </target>
+
+  <target name="clean">
+    <delete dir="${archive.dir}" />
+  </target>
 </project>
