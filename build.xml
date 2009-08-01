@@ -75,6 +75,7 @@
     <mkdir dir="${archive.dir}/db" />
     <mkdir dir="${archive.dir}/libldoc" />
     <mkdir dir="${archive.dir}/www" />
+    <mkdir dir="${archive.dir}/ext" />
 
     <copy todir="${archive.dir}/db">
       <fileset dir="db" />
@@ -95,6 +96,8 @@
     <copy file="INSTALL" tofile="${archive.dir}/INSTALL" />
     <copy file="LICENSE" tofile="${archive.dir}/LICENSE" />
     <copy file="README" tofile="${archive.dir}/README" />
+    <copy file="${src.jquery}/${pkg.jquery}" todir="${archive.dir}/ext" />
+    <copy file="${src.jquery}/${pkg.jquery.json}" todir="${archive.dir}/ext" />
   </target>
 
   <target name="clean">
