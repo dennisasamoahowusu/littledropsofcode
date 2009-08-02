@@ -17,10 +17,10 @@ class Authenticator {
 	if ($row['status'] == false) {
 	    $ret['auth'] = false;
 	    $ret['msg'] = 'Authentication failed';
-	} elseif ($status == 'inactive') {
+	} elseif ($row['status'] == 'inactive') {
 	    $ret['auth'] = false;
 	    $ret['msg'] = 'This user account is inactive';
-	} elseif ($status == 'active') {
+	} elseif ($row['status'] == 'active') {
 	    $ret['auth'] = true;
 	    $ret['msg'] = 'Logged in as ' . $creds['username'];
 	} else {
