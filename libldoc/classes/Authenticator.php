@@ -11,7 +11,7 @@ class Authenticator {
 	    . "where username = ? and password = ?";
 	$sth = $this->dbh->prepare($query);
 	$sth->execute(array($creds['username'], $creds['password']));
-	$row = $dbh->fetch();
+	$row = $sth->fetch();
 
 	$ret = array();
 	if ($row['status'] == false) {
