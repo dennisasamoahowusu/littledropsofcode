@@ -34,5 +34,10 @@ class Session {
     public function setUser($user) {
 	$_SESSION['user'] = $user;
     }
+
+    public function login($username) {
+	$user = User::instance()->getByUsername($username);
+	$this->setUser($user);
+    }
 }
 ?>
