@@ -26,5 +26,13 @@ class Session {
     public function setNavbarItem($item) {
 	$_SESSION['navbar_item'] = ucwords($item);
     }
+
+    public function user() {
+	return $_SESSION['user'];
+    }
+
+    public function setUser($user) {
+	$_SESSION['user'] = $user;
+    }
 }
 ?>
