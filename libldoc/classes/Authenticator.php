@@ -15,16 +15,16 @@ class Authenticator {
 
 	$ret = array();
 	if ($row['status'] == false) {
-	    $ret['valid'] = false;
+	    $ret['auth'] = false;
 	    $ret['msg'] = 'Authentication failed';
 	} elseif ($status == 'inactive') {
-	    $ret['valid'] = false;
+	    $ret['auth'] = false;
 	    $ret['msg'] = 'This user account is inactive';
 	} elseif ($status == 'active') {
-	    $ret['valid'] = true;
+	    $ret['auth'] = true;
 	    $ret['msg'] = 'Logged in as ' . $creds['username'];
 	} else {
-	    $ret['valid'] = false;
+	    $ret['auth'] = false;
 	    $ret['msg'] = 'An unknown error occurred';
 	}
 
