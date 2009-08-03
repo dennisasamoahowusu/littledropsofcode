@@ -20,6 +20,8 @@ $ldoc->action();
   </head>
 
   <body>
+    <?php $ldoc->snippet("topbar"); ?>
+
     <div id="page">
       <div id="page-header">
 	Little drops of code
