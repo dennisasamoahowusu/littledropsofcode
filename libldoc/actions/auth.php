@@ -7,6 +7,5 @@ if ($res['auth']) {
     LittleDropsOfCode::instance()->setPage('home');
 } else {
     LittleDropsOfCode::instance()->setPage('login');
-    echo "MSG: " . $res['msg'] . '<br />';
 }
 ?>
