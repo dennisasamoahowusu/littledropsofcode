@@ -1,6 +1,11 @@
 <ul id="navlist">
 <?php
-$items = array('Home', 'Login', 'Register');
+if (Session::instance()->isLoggedIn()) {
+    $items = array('Home');
+} else {
+    $items = array('Home', 'Login', 'Register');
+}
+
 $current = Session::instance()->navbarItem();
 
 foreach ($items as $item) {
