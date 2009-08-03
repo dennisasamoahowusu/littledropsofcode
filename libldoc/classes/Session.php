@@ -39,5 +39,13 @@ class Session {
 	$user = User::instance()->getByUsername($username);
 	$this->setUser($user);
     }
+
+    public function logout() {
+	unset($_SESSION['user']);
+    }
+
+    public function isLoggedIn() {
+	return isset($_SESSION['user']);
+    }
 }
 ?>
