@@ -1,6 +1,6 @@
 <p>If you have a user account, you can log in using the form below. If you do
 not yet have an account, you can <a href="index.php?page=register">register</a>
-for an account.</p>
+for one.</p>
 
 <div class="form-container">
   <form method="post" action="index.php?action=auth">
