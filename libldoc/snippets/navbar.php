@@ -1,9 +1,9 @@
 <ul id="navlist">
 <?php
 if (Session::instance()->isLoggedIn()) {
-    $items = array('Home');
+    $items = array('Home', 'About');
 } else {
-    $items = array('Home', 'Login', 'Register');
+    $items = array('Home', 'Login', 'Register', 'About');
 }
 
 $current = Session::instance()->navbarItem();
