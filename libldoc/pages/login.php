@@ -10,6 +10,6 @@ for one.</p>
     <label for="password">Password</label><br />
     <input type="password" name="password" id="password" /><br />
 
-    <input type="submit" class="submit" value="Log In" />
+    <input type="submit" class="submit" value="Log In" /><br />
   </form>
 </div>
