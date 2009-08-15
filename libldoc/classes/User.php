@@ -76,6 +76,9 @@ class User {
 	} elseif ($this->emailExists($user['email'])) {
 	    $ret['valid'] = false;
 	    $ret['msg'] = "A user is already registered with that email";
+        } elseif (!ereg("^.+@.+\\..+$", $user['email'])) {
+	    $ret['valid'] = false;
+	    $ret['msg'] = "Your email appears to be incorrect";
 	} else {
 	    $ret['valid'] = true;
 	    $ret['msg'] = 'Valid';
