@@ -42,9 +42,11 @@ class LittleDropsOfCode {
     }
 
     public function action() {
-	if (isset($_GET['action'])) {
-	    $action = $_GET['action'];
-	    require(LIBLDOC_PATH . "/actions/$action.php");
+	if (!isset($this->errorPage)) {
+	    if (isset($_GET['action'])) {
+		$action = $_GET['action'];
+		require(LIBLDOC_PATH . "/actions/$action.php");
+	    }
 	}
     }
 
