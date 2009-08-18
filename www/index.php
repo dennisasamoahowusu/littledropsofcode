@@ -1,12 +1,6 @@
 <?php
 define(LIBLDOC_PATH, '@LIBLDOC_PATH@');
-
-function __autoload($class) {
-    require_once(LIBLDOC_PATH . "/classes/$class.php");
-}
-
-$ldoc = LittleDropsOfCode::instance();
-$ldoc->action();
+require_once(LIBLDOC_PATH . "/snippets/init.php");
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml" version="XHTML 1.1">
