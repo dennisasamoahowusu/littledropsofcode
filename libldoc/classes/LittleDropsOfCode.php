@@ -52,7 +52,7 @@ class LittleDropsOfCode {
 
     public function page($page) {
 	if (isset($this->errorPage)) {
-	    require(LIBLDOC_PATH . "/error/" . $this->errorPage);
+	    require(LIBLDOC_PATH . "/error/" . $this->errorPage . ".php");
 	} elseif (file_exists(LIBLDOC_PATH . "/pages/$page.php")) {
 	    require(LIBLDOC_PATH . "/pages/$page.php");
 	} else {
