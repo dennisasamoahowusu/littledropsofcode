@@ -10,7 +10,15 @@ class Database {
 	$user = '@DB_USER@';
 	$pass = '@DB_PASS@';
 
-	$this->dbh = new PDO("$type:host=$host;dbname=$name", $user, $pass);
+	try {
+	    $this->dbh = new PDO("$type:host=$host;dbname=$name", $user, 
+		$pass);
+	    $this->dbh->setAttribute(PDO::ATTR_ERRMODE, 
+		PDO::ERRMODE_EXCEPTION);
+	} catch (Exception $e) {
+	    $ldoc = LittleDropsOfCode::instance();
+	    $ldoc->setErrorPage('db');
+	}
     }
 
     public static function instance() {

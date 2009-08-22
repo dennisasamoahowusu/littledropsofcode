@@ -31,3 +31,4 @@ class Authenticator {
 	return $ret;
     }
 }
+?>

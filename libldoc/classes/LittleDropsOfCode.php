@@ -1,6 +1,7 @@
 <?php
 class LittleDropsOfCode {
     private static $instance;
+    private $errorPage;
     private $page;
     private $session;
 
@@ -32,15 +33,27 @@ class LittleDropsOfCode {
 	$this->session->setNavbarItem($page);
     }
 
+    public function errorPage() {
+	return $this->errorPage;
+    }
+
+    public function setErrorPage($errorPage) {
+	$this->errorPage = $errorPage;
+    }
+
     public function action() {
-	if (isset($_GET['action'])) {
-	    $action = $_GET['action'];
-	    require(LIBLDOC_PATH . "/actions/$action.php");
+	if (!isset($this->errorPage)) {
+	    if (isset($_GET['action'])) {
+		$action = $_GET['action'];
+		require(LIBLDOC_PATH . "/actions/$action.php");
+	    }
 	}
     }
 
     public function page($page) {
-	if (file_exists(LIBLDOC_PATH . "/pages/$page.php")) {
+	if (isset($this->errorPage)) {
+	    require(LIBLDOC_PATH . "/error/" . $this->errorPage . ".php");
+	} elseif (file_exists(LIBLDOC_PATH . "/pages/$page.php")) {
 	    require(LIBLDOC_PATH . "/pages/$page.php");
 	} else {
 	    require(LIBLDOC_PATH . "/error/nopage.php");
